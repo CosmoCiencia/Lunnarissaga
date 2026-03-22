@@ -1,0 +1,70 @@
+.
+├── generate_book_glb.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+├── project_tree.txt
+├── public
+│   ├── images
+│   │   ├── cartas.png
+│   │   ├── dominios.png
+<<<<<<< HEAD
+│   │   ├── fuego.png
+│   │   └── obra teatral.png
+│   └── models
+│       ├── capsula.glb
+│       └── winrar.glb
+=======
+│   │   ├── escudo reina.png
+│   │   ├── fuego.png
+│   │   ├── obra teatral.png
+│   │   └── welcomepage teatro.webp
+│   └── models
+│       └── Lunnaris3D.glb
+├── README.md
+>>>>>>> 66e15b7 (update teatro celeste)
+├── src
+│   ├── App.tsx
+│   ├── assets
+│   │   └── models
+│   │       └── mascara.glb
+│   ├── canvas
+│   │   ├── Capsule.tsx
+│   │   ├── Lights.tsx
+│   │   ├── Mask.tsx
+│   │   └── Stage.tsx
+│   ├── main.tsx
+│   ├── pages
+│   │   ├── Act0.tsx
+│   │   ├── Cosmovision.module.css
+│   │   ├── Cosmovision.tsx
+│   │   ├── Festival.module.css
+│   │   ├── Festival.tsx
+│   │   ├── Lunaris.module.css
+│   │   └── Lunaris.tsx
+│   ├── stage
+│   │   └── Stage2D.tsx
+│   ├── styles
+│   │   └── index.css
+│   ├── ui
+│   │   ├── Decisions.module.css
+│   │   ├── Decisions.tsx
+│   │   ├── Welcome.module.css
+│   │   └── Welcome.tsx
+│   └── vite-env.d.ts
+├── tailwind.config.js
+├── tsconfig.app.json
+├── tsconfig.app.tsbuildinfo
+├── tsconfig.json
+├── tsconfig.node.json
+├── tsconfig.node.tsbuildinfo
+├── vite.config.d.ts
+├── vite.config.js
+└── vite.config.ts
+
+<<<<<<< HEAD
+12 directories, 42 files
+=======
+12 directories, 44 files
+>>>>>>> 66e15b7 (update teatro celeste)

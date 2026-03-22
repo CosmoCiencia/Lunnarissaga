@@ -1,0 +1,360 @@
+.root {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+
+  display: grid;
+  grid-template-columns: 560px 1fr;
+  align-items: stretch;
+}
+
+.layout {
+  grid-column: 1;
+}
+
+.header {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4.7rem);
+  letter-spacing: 0.18em;
+  white-space: nowrap;
+  color: #cfd8ff;
+  text-shadow:
+    0 0 14px rgba(155, 176, 255, 0.3),
+    0 0 34px rgba(41, 74, 172, 0.35);
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  font-size: clamp(0.85rem, 1.5vw, 1.4rem);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #d3b27c;
+  text-shadow: 0 0 10px rgba(190, 135, 44, 0.42);
+}
+
+.menuPanel {
+  pointer-events: auto;
+  position: relative;
+  width: min(37vw, 540px);
+  height: 100vh;
+  max-height: 100vh;
+  margin-right: auto;
+  padding: 5.8rem 1.5rem 1.5rem;
+  overflow: auto;
+  border-right: 1px solid rgba(184, 140, 64, 0.52);
+  background:
+    radial-gradient(circle at 86% 16%, rgba(100, 133, 255, 0.12), transparent 42%),
+    linear-gradient(170deg, rgba(17, 22, 40, 0.95), rgba(9, 12, 24, 0.96) 48%, rgba(14, 16, 29, 0.97));
+  box-shadow:
+    inset 0 0 0 1px rgba(206, 158, 79, 0.24),
+    inset 0 18px 45px rgba(6, 9, 20, 0.75),
+    22px 0 60px rgba(0, 0, 0, 0.5);
+}
+
+.menuPanel::before {
+  content: '';
+  position: absolute;
+  left: 0.85rem;
+  right: 0.85rem;
+  top: 4.7rem;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(206, 158, 79, 0.7), transparent);
+}
+
+.panelTop {
+  margin-bottom: 1rem;
+}
+
+.panelKicker {
+  margin: 0;
+  font-size: 0.74rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #cfac6f;
+  opacity: 0.95;
+}
+
+.panelTitle {
+  margin: 0.5rem 0 0;
+  font-size: clamp(1.3rem, 1.8vw, 1.9rem);
+  letter-spacing: 0.08em;
+  color: #e0ebff;
+}
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.menuItem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 66px;
+  padding: 0 1rem 0 2.3rem;
+  border-radius: 12px;
+  border: 1px solid rgba(170, 132, 60, 0.36);
+  background:
+    linear-gradient(180deg, rgba(23, 30, 58, 0.94), rgba(12, 17, 34, 0.95));
+  color: #d7e4ff;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.menuItem:hover,
+.menuItem:focus-visible,
+.menuItemActive {
+  transform: translateX(5px);
+  border-color: rgba(236, 183, 86, 0.8);
+  background:
+    linear-gradient(180deg, rgba(34, 44, 79, 0.95), rgba(18, 27, 50, 0.95));
+  box-shadow:
+    0 0 0 1px rgba(231, 180, 86, 0.25) inset,
+    0 12px 20px rgba(2, 6, 16, 0.5);
+}
+
+.menuRune {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.76rem;
+  color: rgba(228, 180, 91, 0.92);
+  text-shadow: 0 0 8px rgba(228, 180, 91, 0.42);
+}
+
+.menuIcon {
+  width: 2.2rem;
+  height: 2.2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(210, 174, 109, 0.66);
+  background:
+    radial-gradient(circle at 30% 25%, rgba(245, 212, 149, 0.33), rgba(48, 34, 15, 0.95));
+  color: #ffeecf;
+  font-size: 0.95rem;
+  flex: 0 0 auto;
+}
+
+.menuLabel {
+  font-size: clamp(1.1rem, 1.9vw, 1.65rem);
+  letter-spacing: 0.04em;
+  color: #dbe8ff;
+}
+
+.descriptionCard {
+  margin: 1rem 0 0.95rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid rgba(198, 154, 83, 0.34);
+  background: linear-gradient(180deg, rgba(18, 22, 38, 0.82), rgba(13, 17, 30, 0.86));
+}
+
+.descriptionTitle {
+  margin: 0;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #d5b47f;
+}
+
+.description {
+  margin: 0.55rem 0 0;
+  font-size: clamp(0.93rem, 1.22vw, 1.08rem);
+  color: rgba(222, 232, 255, 0.88);
+  line-height: 1.45;
+}
+
+.purchaseButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 60px;
+  border-radius: 10px;
+  border: 1px solid rgba(220, 173, 83, 0.8);
+  background:
+    linear-gradient(180deg, rgba(64, 41, 16, 0.88), rgba(36, 25, 10, 0.95));
+  color: #ffdca4;
+  text-decoration: none;
+  font-size: clamp(0.95rem, 1.3vw, 1.2rem);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  box-shadow:
+    inset 0 0 0 1px rgba(244, 210, 142, 0.24),
+    0 10px 18px rgba(0, 0, 0, 0.42);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.purchaseButton:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 215, 145, 0.98);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 226, 170, 0.35),
+    0 14px 24px rgba(0, 0, 0, 0.5);
+}
+
+.bottomGlow {
+  pointer-events: none;
+  position: absolute;
+  left: 34%;
+  bottom: 7%;
+  width: 450px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(234, 186, 94, 0.2), rgba(234, 186, 94, 0));
+  filter: blur(18px);
+}
+
+@media (max-width: 1100px) {
+  .menuPanel {
+    width: min(43vw, 450px);
+    padding: 5.4rem 1.15rem 1.25rem;
+  }
+
+  .panelTitle {
+    font-size: 1.35rem;
+  }
+
+  .menuLabel {
+    font-size: clamp(1rem, 2vw, 1.34rem);
+  }
+
+  .bottomGlow {
+    left: 30%;
+    width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .root {
+    display: block;
+  }
+
+  .header {
+    top: 0.75rem;
+    width: 100%;
+  }
+
+  .title {
+    font-size: clamp(1.9rem, 8.7vw, 2.75rem);
+    letter-spacing: 0.12em;
+  }
+
+  .subtitle {
+    margin-top: 0.35rem;
+    font-size: clamp(0.75rem, 3.5vw, 1rem);
+    letter-spacing: 0.16em;
+  }
+
+  .menuPanel {
+    position: absolute;
+    left: 0.7rem;
+    right: 0.7rem;
+    bottom: 0.7rem;
+    width: auto;
+    height: auto;
+    max-height: 57vh;
+    padding: 1rem 0.85rem calc(0.85rem + env(safe-area-inset-bottom));
+    border-radius: 16px;
+    border: 1px solid rgba(197, 151, 76, 0.58);
+    animation: menuSlideUp 0.34s ease-out;
+  }
+
+  .menuPanel::before {
+    top: 3.9rem;
+    left: 0.6rem;
+    right: 0.6rem;
+  }
+
+  .panelKicker {
+    font-size: 0.65rem;
+  }
+
+  .panelTitle {
+    font-size: 1.08rem;
+    margin-top: 0.38rem;
+  }
+
+  .menuList {
+    gap: 0.48rem;
+  }
+
+  .menuItem {
+    min-height: 54px;
+    padding: 0 0.75rem 0 1.95rem;
+  }
+
+  .menuRune {
+    left: 0.66rem;
+    font-size: 0.66rem;
+  }
+
+  .menuIcon {
+    width: 1.85rem;
+    height: 1.85rem;
+    font-size: 0.82rem;
+  }
+
+  .menuLabel {
+    font-size: clamp(0.95rem, 4.5vw, 1.2rem);
+  }
+
+  .descriptionCard {
+    margin-top: 0.85rem;
+    padding: 0.6rem 0.68rem;
+  }
+
+  .descriptionTitle {
+    font-size: 0.62rem;
+  }
+
+  .description {
+    font-size: 0.88rem;
+    margin-top: 0.45rem;
+  }
+
+  .purchaseButton {
+    min-height: 52px;
+    letter-spacing: 0.11em;
+    font-size: 0.87rem;
+  }
+
+  .bottomGlow {
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(85vw, 360px);
+    height: 74px;
+    bottom: calc(58vh - 10px);
+    opacity: 0.7;
+  }
+}
+
+@keyframes menuSlideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
