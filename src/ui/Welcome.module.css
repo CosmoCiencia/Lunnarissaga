@@ -243,15 +243,15 @@ button.primaryButton:hover {
 
 @media (max-width: 640px) {
   .root {
-    align-items: flex-start;
-    padding: max(1.25rem, env(safe-area-inset-top)) 0 1.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: max(0.75rem, env(safe-area-inset-top)) 0 max(0.75rem, env(safe-area-inset-bottom));
     box-sizing: border-box;
   }
 
   .panel {
     width: min(94vw, 30rem);
     margin: 0 auto;
-    padding-top: 1.25rem;
     transform: none;
   }
 
