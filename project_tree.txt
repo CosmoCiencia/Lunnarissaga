@@ -7,10 +7,16 @@
 ├── public
 │   ├── images
 │   │   ├── cartas.png
+│   │   ├── cartas.webp
 │   │   ├── dominios.png
+│   │   ├── dominios.webp
 │   │   ├── escudo reina.png
+│   │   ├── escudo-reina.webp
 │   │   ├── fuego.png
+│   │   ├── fuego.webp
 │   │   ├── obra teatral.png
+│   │   ├── obra-teatral.webp
+│   │   ├── welcome-hero.webp
 │   │   └── welcomepage teatro.webp
 │   └── models
 │       └── Lunnaris3D.glb
@@ -20,6 +26,9 @@
 │   ├── canvas
 │   │   ├── Book.tsx
 │   │   └── Stage.tsx
+│   ├── config
+│   │   ├── mobile-layout.json
+│   │   └── mobileLayout.ts
 │   ├── main.tsx
 │   ├── pages
 │   │   ├── Cosmovision.module.css
@@ -30,10 +39,28 @@
 │   │   ├── Lunaris.module.css
 │   │   └── Lunaris.tsx
 │   ├── styles
+│   │   ├── Decisions
+│   │   │   ├── Decisions.module.css
+│   │   │   ├── DecisionsThemes.module.css
+│   │   │   ├── DetailItems.module.css
+│   │   │   ├── ExperienceFlow.module.css
+│   │   │   ├── MobileLayoutCalibrator.module.css
+│   │   │   ├── OrbitImage.module.css
+│   │   │   ├── OrbitModal.module.css
+│   │   │   ├── StoryActs.module.css
+│   │   │   └── WorldConstellation.module.css
 │   │   └── index.css
 │   ├── ui
-│   │   ├── Decisions.module.css
-│   │   ├── Decisions.tsx
+│   │   ├── Decisions
+│   │   │   ├── Decisions.tsx
+│   │   │   ├── DetailItems.tsx
+│   │   │   ├── ExperienceFlow.tsx
+│   │   │   ├── MobileLayoutCalibrator.tsx
+│   │   │   ├── orbitData.ts
+│   │   │   ├── OrbitImage.tsx
+│   │   │   ├── OrbitModal.tsx
+│   │   │   ├── StoryActs.tsx
+│   │   │   └── WorldConstellation.tsx
 │   │   ├── Welcome.module.css
 │   │   └── Welcome.tsx
 │   └── vite-env.d.ts
@@ -47,4 +74,4 @@
 ├── vite.config.js
 └── vite.config.ts
 
-9 directories, 39 files
+12 directories, 63 files

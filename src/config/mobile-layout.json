@@ -9,8 +9,8 @@
       "topVh": 15.03705863383279
     },
     "orbitStage": {
-      "xPct": 47.98082022550408,
-      "topVh": 41.06980434298678
+      "xPct": 48.103134179843885,
+      "topVh": 46.120306172882046
     },
     "orbitSizeVw": 26.6,
     "orbits": {
@@ -32,19 +32,19 @@
       }
     },
     "cta": {
-      "xPct": 48.54875242504587,
-      "bottomVh": 32.19719307846421,
+      "xPct": 47.79800453818196,
+      "bottomVh": 27.674355495251014,
       "widthVw": 61
     },
     "secureNote": {
-      "xPct": 48.54756772907731,
-      "bottomVh": 29.33400312446998
+      "xPct": 47.609126426752034,
+      "bottomVh": 18.3284286354096
     }
   },
   "stage": {
     "pedestalVisibleMobile": false,
     "pedestalY": 1.42,
-    "bookY": 1.68,
+    "bookY": 1.31,
     "cameraY": 2.85,
     "cameraZ": 6.38,
     "targetY": 1.54,

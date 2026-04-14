@@ -41,19 +41,25 @@ type StageProps = {
 export default function Stage({ mobileLayout }: StageProps) {
   const controlsRef = useRef<OrbitControlsImpl | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+
   const pedestalPosition: [number, number, number] = isMobile
     ? [0, mobileLayout.stage.pedestalY, 0]
     : [0, 0.45, 0];
+
   const bookPosition: [number, number, number] = isMobile
     ? [0, mobileLayout.stage.bookY, 0]
     : [0, 0.8, 0];
+
   const cameraPosition: [number, number, number] = isMobile
     ? [0, mobileLayout.stage.cameraY, mobileLayout.stage.cameraZ]
     : [0, 1.9, 6.5];
+
   const cameraTarget: [number, number, number] = isMobile
     ? [0, mobileLayout.stage.targetY, 0]
     : [0, 1, 0];
+
   const cameraFov = isMobile ? mobileLayout.stage.fov : 45;
+
   const baseScale = 0.7;
   const responsiveScale = isMobile ? baseScale * mobileLayout.stage.scale : baseScale;
 
@@ -75,15 +81,20 @@ export default function Stage({ mobileLayout }: StageProps) {
       <color attach="background" args={['#000000']} />
       <fog attach="fog" args={['#05050f', 8, 26]} />
 
-      <mesh scale={120}>
-        <sphereGeometry args={[1, 64, 64]} />
+      {/* 🔥 cielo base */}
+      <mesh scale={120} frustumCulled={false}>
+        <sphereGeometry args={[1, 48, 48]} />
         <meshBasicMaterial color="#05050f" side={THREE.BackSide} />
       </mesh>
 
+      {/* 🔥 estrellas */}
       <Stars radius={140} depth={80} count={2600} factor={3.2} saturation={0} fade speed={0.6} />
+
+      {/* 🔥 partículas */}
       <Sparkles count={220} scale={[18, 10, 18]} size={4} speed={0.6} color="#9ae6ff" />
       <Sparkles count={140} scale={[10, 6, 10]} size={6} speed={0.4} color="#b18cff" />
 
+      {/* 🔥 pedestal */}
       {!isMobile || mobileLayout.stage.pedestalVisibleMobile ? (
         <group position={pedestalPosition} scale={0.5}>
           <mesh receiveShadow>
@@ -146,6 +157,7 @@ export default function Stage({ mobileLayout }: StageProps) {
         </group>
       ) : null}
 
+      {/* 🔥 luces (igual) */}
       <ambientLight intensity={0.35} color="#a8c6ff" />
       <directionalLight position={[4.5, 6, 3]} intensity={1.25} color="#b6ccff" />
       <directionalLight position={[-3, 3, -4]} intensity={0.5} color="#6ef3ff" />
@@ -162,9 +174,7 @@ export default function Stage({ mobileLayout }: StageProps) {
         penumbra={0.75}
         distance={12}
         color="#ffe8b8"
-        castShadow={false}
       />
-
       <spotLight
         position={[-2.5, 2.6, 1.5]}
         intensity={1.6}
@@ -172,9 +182,7 @@ export default function Stage({ mobileLayout }: StageProps) {
         penumbra={0.8}
         distance={10}
         color="#ffd8a8"
-        castShadow={false}
       />
-
       <spotLight
         position={[2.8, 2.4, 1.8]}
         intensity={1.5}
@@ -182,9 +190,7 @@ export default function Stage({ mobileLayout }: StageProps) {
         penumbra={0.8}
         distance={10}
         color="#fff2c5"
-        castShadow={false}
       />
-
       <spotLight
         position={[0, -1, 0.8]}
         intensity={5}
@@ -192,15 +198,18 @@ export default function Stage({ mobileLayout }: StageProps) {
         penumbra={0.9}
         distance={6}
         color="#ffd8a8"
-        castShadow={false}
       />
 
       <pointLight position={[0, 2.2, -3.5]} intensity={0.5} color="#b18cff" />
+
+      {/* 🔥 environment igual */}
       <Environment preset="night" environmentIntensity={0.9} background={false} />
 
+      {/* 🔥 libro (ya optimizado desde Book.tsx) */}
       <Suspense fallback={null}>
         <Book scale={responsiveScale} position={bookPosition} rotation={[0, Math.PI, 0]} />
       </Suspense>
+
       <CameraRig position={cameraPosition} target={cameraTarget} controlsRef={controlsRef} />
 
       <OrbitControls
