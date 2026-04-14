@@ -36,12 +36,12 @@ function CameraRig({
 export default function Stage() {
   const controlsRef = useRef<OrbitControlsImpl | null>(null);
   const [isMobile, setIsMobile] = useState(false);
-  const bookPosition: [number, number, number] = [0, 0.8, 0];
-  const cameraPosition: [number, number, number] = [0, 1.9, 6.5];
-  const cameraTarget: [number, number, number] = [0, 1, 0];
-  const cameraFov = 45;
+  const bookPosition: [number, number, number] = isMobile ? [0, 0.35, 0] : [0, 0.8, 0];
+  const cameraPosition: [number, number, number] = isMobile ? [0, 1.4, 7.4] : [0, 1.9, 6.5];
+  const cameraTarget: [number, number, number] = isMobile ? [0, 0.65, 0] : [0, 1, 0];
+  const cameraFov = isMobile ? 50 : 45;
   const baseScale = 0.7;
-  const responsiveScale = isMobile ? baseScale * 0.9 : baseScale;
+  const responsiveScale = isMobile ? baseScale * 0.72 : baseScale;
 
   useEffect(() => {
     const onResize = () => {

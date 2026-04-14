@@ -242,26 +242,78 @@ button.primaryButton:hover {
 }
 
 @media (max-width: 640px) {
+  .root {
+    align-items: flex-start;
+    padding: max(1.25rem, env(safe-area-inset-top)) 0 1.5rem;
+    box-sizing: border-box;
+  }
+
   .panel {
-    transform: scale(1.15) translateY(6vh);
+    width: min(94vw, 30rem);
+    margin: 0 auto;
+    padding-top: 1.25rem;
+    transform: none;
   }
 
   .titleMain {
-    font-size: clamp(2.8rem, 11vw, 4.2rem);
-    line-height: 1.05;
+    font-size: clamp(2.7rem, 11.2vw, 4.1rem);
+    line-height: 0.98;
   }
 
   .titleSub {
-    font-size: clamp(1rem, 4.5vw, 1.4rem);
-    margin-top: 0.4rem;
+    font-size: clamp(1.02rem, 4.8vw, 1.42rem);
+    margin-top: 0.5rem;
+    line-height: 1.15;
   }
 
   .primaryButton {
-    font-size: 1.2rem;
-    padding: 1.2rem 2.6rem;
+    width: min(18rem, 100%);
+    min-height: 3.9rem;
+    font-size: 1.12rem;
+    padding: 1rem 1.6rem;
   }
 
   .crest {
-    width: clamp(150px, 28vw, 200px);
+    width: clamp(118px, 28vw, 152px);
+    margin-top: 0.9rem;
+  }
+
+  .menu {
+    width: 100%;
+    margin-top: 1.6rem;
+    gap: 0.95rem;
+  }
+
+  .menuLead {
+    font-size: clamp(1.2rem, 5.8vw, 1.7rem);
+    line-height: 1.12;
+  }
+
+  .menuCaption {
+    margin-top: 0;
+  }
+
+  .menuCaption span:last-child {
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+  }
+}
+
+@media (max-width: 420px) {
+  .titleMain {
+    font-size: clamp(2.35rem, 11vw, 3.1rem);
+  }
+
+  .titleSub {
+    font-size: 0.98rem;
+  }
+
+  .menuLead {
+    font-size: 1.08rem;
+  }
+
+  .primaryButton {
+    min-height: 3.65rem;
+    font-size: 1.04rem;
   }
 }

@@ -1353,29 +1353,40 @@
 }
 
 @media (max-width: 640px) {
+  .root {
+    padding: max(0.75rem, env(safe-area-inset-top)) 0 max(1rem, env(safe-area-inset-bottom));
+    box-sizing: border-box;
+  }
+
   .header {
-    top: 0.5rem;
+    top: max(0.65rem, env(safe-area-inset-top));
+    width: min(92vw, 28rem);
   }
 
   .subtitle {
-    margin-top: 0.35rem;
-    font-size: 1.05rem;
-    letter-spacing: 0.1em;
+    margin-top: 0.3rem;
+    font-size: 0.98rem;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
   }
 
   .orbitStage {
-    top: 40%;
+    top: 49%;
   }
 
   .purchaseWrap {
-    top: calc(40% + 19rem);
+    top: auto;
+    bottom: max(1rem, env(safe-area-inset-bottom));
+    width: min(92vw, 24rem);
   }
 
   .purchaseLink {
-    min-width: 280px;
-    font-size: 1.05rem;
+    width: 100%;
+    min-width: 0;
+    min-height: 4rem;
+    font-size: 1rem;
     letter-spacing: 0.08em;
-    padding: 1.15rem 2.8rem;
+    padding: 1rem 1.5rem;
   }
 
   .ctaLink {
@@ -1383,6 +1394,89 @@
     font-size: 0.75rem;
     letter-spacing: 0.06em;
     padding: 0.9rem 1.6rem;
+  }
+
+  .orbitImageOnly {
+    height: clamp(7.2rem, 23vw, 8.8rem);
+    width: clamp(7.2rem, 23vw, 8.8rem);
+    gap: 0.55rem;
+  }
+
+  .orbitImageOnly:nth-child(1) {
+    transform: translate(-50%, -50%) translate(clamp(-125px, -31vw, -96px), clamp(-150px, -25vw, -110px)) !important;
+  }
+
+  .orbitImageOnly:nth-child(2) {
+    transform: translate(-50%, -50%) translate(clamp(125px, 31vw, 96px), clamp(-150px, -25vw, -110px)) !important;
+  }
+
+  .orbitImageOnly:nth-child(3) {
+    transform: translate(-50%, -50%) translate(clamp(125px, 31vw, 96px), clamp(18px, 8vw, 42px)) !important;
+  }
+
+  .orbitImageOnly:nth-child(4) {
+    transform: translate(-50%, -50%) translate(clamp(-125px, -31vw, -96px), clamp(18px, 8vw, 42px)) !important;
+  }
+
+  .orbitLabel {
+    max-width: 9rem;
+    font-size: clamp(0.94rem, 3.3vw, 1.08rem);
+    letter-spacing: 0.02em;
+    line-height: 1.08;
+  }
+}
+
+@media (max-width: 420px) {
+  .header {
+    top: max(0.5rem, env(safe-area-inset-top));
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .subtitle {
+    font-size: 0.88rem;
+  }
+
+  .orbitStage {
+    top: 47%;
+  }
+
+  .orbitImageOnly {
+    height: 6.5rem;
+    width: 6.5rem;
+  }
+
+  .orbitImageOnly:nth-child(1) {
+    transform: translate(-50%, -50%) translate(-92px, -118px) !important;
+  }
+
+  .orbitImageOnly:nth-child(2) {
+    transform: translate(-50%, -50%) translate(92px, -118px) !important;
+  }
+
+  .orbitImageOnly:nth-child(3) {
+    transform: translate(-50%, -50%) translate(92px, 18px) !important;
+  }
+
+  .orbitImageOnly:nth-child(4) {
+    transform: translate(-50%, -50%) translate(-92px, 18px) !important;
+  }
+
+  .orbitLabel {
+    max-width: 7rem;
+    font-size: 0.84rem;
+  }
+
+  .purchaseWrap {
+    width: min(92vw, 22rem);
+  }
+
+  .purchaseLink {
+    min-height: 3.7rem;
+    font-size: 0.92rem;
+    letter-spacing: 0.05em;
   }
 }
 
