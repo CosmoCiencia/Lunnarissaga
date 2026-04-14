@@ -62,6 +62,12 @@ export default function Stage({ mobileLayout }: StageProps) {
 
   const baseScale = 0.7;
   const responsiveScale = isMobile ? baseScale * mobileLayout.stage.scale : baseScale;
+  const dpr =
+    typeof window === 'undefined'
+      ? 1
+      : isMobile
+        ? Math.min(window.devicePixelRatio, 2)
+        : Math.min(window.devicePixelRatio, 1.5);
 
   useEffect(() => {
     const onResize = () => {
@@ -74,7 +80,7 @@ export default function Stage({ mobileLayout }: StageProps) {
 
   return (
     <Canvas
-      dpr={[1, 1.5]}
+      dpr={dpr}
       gl={{ antialias: true, powerPreference: 'high-performance' }}
       camera={{ position: cameraPosition, fov: cameraFov, near: 0.1, far: 246 }}
     >
