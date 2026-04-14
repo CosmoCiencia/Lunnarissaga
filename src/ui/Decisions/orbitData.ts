@@ -1,4 +1,4 @@
-import styles from './Decisions.module.css';
+import styles from '../../styles/Decisions/DecisionsThemes.module.css';
 
 export type OrbitStoryAct = {
   id: string;
@@ -57,6 +57,7 @@ export type OrbitEntry = {
   transform: string;
   labelClassName?: string;
   description: string;
+  mobileSummary: string;
   ctaLabel: string;
   eyebrow: string;
   tags: string[];
@@ -75,6 +76,7 @@ export const orbitEntries: OrbitEntry[] = [
     transform:
       'translate(-50%, -50%) translate(clamp(-400px, -32vw, -300px), clamp(-300px, -22vw, -210px))',
     description: 'Esta es la travesía que abre Lunnaris.',
+    mobileSummary: 'El origen de Lunnaris y su propósito.',
     ctaLabel: 'Inicia la función y recórrela.',
     tags: [],
     storyActs: [
@@ -112,6 +114,7 @@ export const orbitEntries: OrbitEntry[] = [
     transform:
       'translate(-50%, -50%) translate(clamp(300px, 32vw, 400px), clamp(210px, 20vw, 300px))',
     description: 'La obra no termina en el libro.',
+    mobileSummary: 'Vive la saga de manera inmersiva y única.',
     ctaLabel: 'Activa la función.',
     tags: [],
     experienceFlow: {
@@ -136,6 +139,7 @@ export const orbitEntries: OrbitEntry[] = [
     transform:
       'translate(-50%, -50%) translate(clamp(300px, 32vw, 400px), clamp(-300px, -22vw, -210px))',
     description: 'Todo esto forma parte de la función.',
+    mobileSummary: 'Todo lo que recibirás al adquirir tu tomo.',
     ctaLabel: 'Recíbelo en tus manos.',
     tags: [],
     detailItems: [
@@ -177,6 +181,7 @@ export const orbitEntries: OrbitEntry[] = [
     transform:
       'translate(-50%, -50%) translate(clamp(-400px, -32vw, -300px), clamp(210px, 20vw, 300px))',
     description: 'Este es el mapa de Lunnaris.',
+    mobileSummary: 'Explora los rincones de nuestro universo.',
     ctaLabel: 'Entra al recorrido.',
     tags: [],
     worldConstellation: {

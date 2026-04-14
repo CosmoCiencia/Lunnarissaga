@@ -99,7 +99,6 @@
   width: clamp(128px, 15vw, 210px);
   height: auto;
   margin: 1.1rem auto 0;
-  animation: crestFloat 4s ease-in-out infinite;
   filter:
     drop-shadow(0 0 10px rgba(106, 178, 255, 0.18))
     drop-shadow(0 0 16px rgba(248, 210, 122, 0.22))
@@ -230,17 +229,6 @@ button.primaryButton:hover {
   }
 }
 
-@keyframes crestFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-4px);
-  }
-}
-
 @media (max-width: 640px) {
   .root {
     align-items: center;
@@ -261,7 +249,7 @@ button.primaryButton:hover {
   }
 
   .titleSub {
-    font-size: clamp(1.02rem, 4.8vw, 1.42rem);
+    font-size: clamp(1.18rem, 5.4vw, 1.62rem);
     margin-top: 0.5rem;
     line-height: 1.15;
   }
@@ -285,7 +273,7 @@ button.primaryButton:hover {
   }
 
   .menuLead {
-    font-size: clamp(1.2rem, 5.8vw, 1.7rem);
+    font-size: clamp(1.42rem, 6.5vw, 1.95rem);
     line-height: 1.12;
   }
 
@@ -294,7 +282,7 @@ button.primaryButton:hover {
   }
 
   .menuCaption span:last-child {
-    font-size: 0.82rem;
+    font-size: 1rem;
     letter-spacing: 0.12em;
   }
 }
@@ -305,15 +293,19 @@ button.primaryButton:hover {
   }
 
   .titleSub {
-    font-size: 0.98rem;
+    font-size: 1.08rem;
   }
 
   .menuLead {
-    font-size: 1.08rem;
+    font-size: 1.3rem;
   }
 
   .primaryButton {
     min-height: 3.65rem;
     font-size: 1.04rem;
+  }
+
+  .menuCaption span:last-child {
+    font-size: 0.92rem;
   }
 }

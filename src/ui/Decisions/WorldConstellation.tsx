@@ -1,5 +1,5 @@
 import type { OrbitWorldConstellation, OrbitWorldNode } from './orbitData';
-import styles from './Decisions.module.css';
+import styles from '../../styles/Decisions/WorldConstellation.module.css';
 
 type WorldConstellationProps = {
   worldConstellation?: OrbitWorldConstellation;

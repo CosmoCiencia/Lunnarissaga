@@ -1,0 +1,186 @@
+.panel {
+  position: fixed;
+  right: 0.75rem;
+  top: 0.75rem;
+  z-index: 90;
+  width: min(22rem, calc(100vw - 1.5rem));
+  max-height: calc(100vh - 1.5rem);
+  overflow: auto;
+  padding: 0.85rem;
+  border-radius: 18px;
+  border: 1px solid rgba(127, 211, 255, 0.28);
+  background: rgba(5, 8, 22, 0.92);
+  box-shadow:
+    0 18px 48px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  color: #f3f6ff;
+  pointer-events: auto;
+}
+
+.title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.toggleButton {
+  border: 1px solid rgba(248, 210, 122, 0.34);
+  background: rgba(248, 210, 122, 0.1);
+  color: #fff7da;
+  border-radius: 999px;
+  padding: 0.48rem 0.8rem;
+  font-size: 0.74rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.meta {
+  margin: 0 0 0.8rem;
+  font-size: 0.74rem;
+  line-height: 1.45;
+  color: rgba(233, 238, 255, 0.74);
+}
+
+.section {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 0.9rem;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(248, 210, 122, 0.9);
+}
+
+.grid {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.22rem;
+}
+
+.field label {
+  font-size: 0.72rem;
+  color: rgba(233, 238, 255, 0.82);
+}
+
+.field input[type='range'] {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.button {
+  border: 1px solid rgba(127, 211, 255, 0.32);
+  background: rgba(127, 211, 255, 0.08);
+  color: #ffffff;
+  border-radius: 999px;
+  padding: 0.65rem 0.95rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.buttonPrimary {
+  border-color: rgba(248, 210, 122, 0.38);
+  background: rgba(248, 210, 122, 0.12);
+}
+
+.status {
+  margin: 0.6rem 0 0;
+  font-size: 0.74rem;
+  color: rgba(233, 238, 255, 0.82);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+}
+
+.handle {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  border: 1px dashed rgba(127, 211, 255, 0.65);
+  background: rgba(127, 211, 255, 0.1);
+  color: #ffffff;
+  border-radius: 14px;
+  pointer-events: auto;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.72rem;
+  line-height: 1.2;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
+.handle:active {
+  cursor: grabbing;
+}
+
+.headerHandle {
+  min-width: 11rem;
+  min-height: 4.6rem;
+}
+
+.dividerHandle {
+  width: 8.5rem;
+  min-height: 2rem;
+}
+
+.orbitStageHandle {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 999px;
+}
+
+.orbitHandle {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 999px;
+  background: rgba(248, 210, 122, 0.08);
+  border-color: rgba(248, 210, 122, 0.65);
+}
+
+.ctaHandle {
+  min-width: 12rem;
+  min-height: 4rem;
+}
+
+.noteHandle {
+  min-width: 9rem;
+  min-height: 2rem;
+}
+
+@media (min-width: 641px) {
+  .panel,
+  .overlay {
+    display: none;
+  }
+}

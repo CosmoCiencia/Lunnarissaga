@@ -1,5 +1,5 @@
 import type { OrbitDetailItem } from './orbitData';
-import styles from './Decisions.module.css';
+import styles from '../../styles/Decisions/DetailItems.module.css';
 
 type DetailItemsProps = {
   detailItems?: OrbitDetailItem[];

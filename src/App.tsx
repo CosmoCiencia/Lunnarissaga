@@ -1,5 +1,10 @@
 import { Suspense, lazy, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import {
+  cloneMobileLayoutConfig,
+  mobileLayoutConfig,
+  type MobileLayoutConfig,
+} from './config/mobileLayout';
 import Welcome from './ui/Welcome';
 
 const Stage = lazy(() => import('./canvas/Stage'));
@@ -16,6 +21,9 @@ const WHATSAPP_MESSAGE = encodeURIComponent(
 
 export default function App() {
   const [started, setStarted] = useState(false);
+  const [layout, setLayout] = useState<MobileLayoutConfig>(() =>
+    cloneMobileLayoutConfig(mobileLayoutConfig),
+  );
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
   return (
@@ -27,8 +35,8 @@ export default function App() {
             element={
               <div className="w-screen h-screen relative overflow-hidden">
                 {!started && <Welcome onStart={() => setStarted(true)} />}
-                {started && <Stage />}
-                {started && <Decisions />}
+                {started && <Stage mobileLayout={layout} />}
+                {started && <Decisions mobileLayout={layout} onMobileLayoutChange={setLayout} />}
               </div>
             }
           />

@@ -1,5 +1,5 @@
 import type { CSSProperties } from 'react';
-import styles from './Decisions.module.css';
+import styles from '../../styles/Decisions/OrbitImage.module.css';
 
 type OrbitImageProps = {
   imageSrc: string;

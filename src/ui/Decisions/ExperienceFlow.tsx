@@ -1,5 +1,5 @@
 import type { OrbitExperienceFlow } from './orbitData';
-import styles from './Decisions.module.css';
+import styles from '../../styles/Decisions/ExperienceFlow.module.css';
 
 type ExperienceFlowProps = {
   experienceFlow?: OrbitExperienceFlow;

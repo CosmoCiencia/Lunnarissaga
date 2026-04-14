@@ -1,0 +1,282 @@
+.experienceSystem {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0.35rem 0 0.2rem;
+}
+
+.systemTrack {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.7rem;
+  padding: 1.05rem 0.9rem 0.9rem;
+  border-radius: 22px;
+  border: 1px solid rgba(127, 211, 255, 0.16);
+  background:
+    radial-gradient(circle at 15% 0%, rgba(127, 211, 255, 0.12), transparent 30%),
+    radial-gradient(circle at 85% 100%, rgba(248, 210, 122, 0.1), transparent 34%),
+    linear-gradient(180deg, rgba(12, 16, 40, 0.92), rgba(7, 9, 24, 0.96));
+  overflow: hidden;
+}
+
+.systemTrack::before {
+  content: '';
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: 3.2rem;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(127, 211, 255, 0.12),
+    rgba(127, 211, 255, 0.3),
+    rgba(248, 210, 122, 0.28),
+    rgba(248, 210, 122, 0.12)
+  );
+}
+
+.systemTrack::after {
+  content: '';
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  top: calc(3.2rem - 1px);
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(127, 211, 255, 0.12),
+    rgba(127, 211, 255, 0.85),
+    rgba(248, 210, 122, 0.88),
+    rgba(248, 210, 122, 0.18)
+  );
+  transform-origin: left center;
+  animation: systemScan 3.8s ease-in-out infinite;
+  box-shadow:
+    0 0 18px rgba(127, 211, 255, 0.26),
+    0 0 24px rgba(248, 210, 122, 0.18);
+}
+
+.systemStep {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 0.68rem;
+}
+
+.systemNode {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 4.1rem;
+  height: 4.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(127, 211, 255, 0.3);
+  background:
+    radial-gradient(circle at 35% 28%, rgba(255, 255, 255, 0.2), transparent 42%),
+    linear-gradient(180deg, rgba(22, 30, 65, 0.96), rgba(8, 10, 26, 0.98));
+  box-shadow:
+    0 0 0 6px rgba(127, 211, 255, 0.04),
+    0 0 24px rgba(127, 211, 255, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  animation: systemPulse 3.8s ease-in-out infinite;
+}
+
+.systemNode::after {
+  content: '';
+  position: absolute;
+  inset: -7px;
+  border-radius: 999px;
+  border: 1px solid rgba(248, 210, 122, 0.2);
+  opacity: 0.5;
+  animation: systemHalo 3.8s ease-in-out infinite;
+}
+
+.systemStep:nth-child(2) .systemNode,
+.systemStep:nth-child(2) .systemNode::after {
+  animation-delay: 0.28s;
+}
+
+.systemStep:nth-child(3) .systemNode,
+.systemStep:nth-child(3) .systemNode::after {
+  animation-delay: 0.56s;
+}
+
+.systemStep:nth-child(4) .systemNode,
+.systemStep:nth-child(4) .systemNode::after {
+  animation-delay: 0.84s;
+}
+
+.systemNodeIndex {
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--title-gold);
+}
+
+.systemStepLabel {
+  margin: 0;
+  font-size: 0.74rem;
+  line-height: 1.35;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--title-gold);
+  -webkit-text-fill-color: var(--title-gold);
+  font-weight: 700;
+}
+
+.systemNarrative {
+  display: grid;
+  gap: 0.62rem;
+}
+
+.systemParagraph {
+  margin: 0;
+  padding: 0.82rem 0.92rem;
+  min-height: 5.9rem;
+  display: flex;
+  align-items: center;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 2px solid rgba(248, 210, 122, 0.34);
+  background:
+    linear-gradient(90deg, rgba(127, 211, 255, 0.08), transparent 88%),
+    rgba(255, 255, 255, 0.02);
+  font-size: 0.95rem;
+  line-height: 1.56;
+  color: rgba(233, 236, 252, 0.88);
+  white-space: pre-line;
+}
+
+.systemParagraph:last-child {
+  border-left-color: rgba(127, 211, 255, 0.4);
+  color: #ffffff;
+}
+
+@keyframes systemScan {
+  0%,
+  14% {
+    transform: scaleX(0.16);
+    opacity: 0.28;
+  }
+
+  48%,
+  72% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleX(0.22);
+    opacity: 0.34;
+  }
+}
+
+@keyframes systemPulse {
+  0%,
+  100% {
+    transform: scale(0.96);
+    box-shadow:
+      0 0 0 6px rgba(127, 211, 255, 0.04),
+      0 0 18px rgba(127, 211, 255, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  50% {
+    transform: scale(1);
+    box-shadow:
+      0 0 0 8px rgba(127, 211, 255, 0.08),
+      0 0 28px rgba(127, 211, 255, 0.16),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+}
+
+@keyframes systemHalo {
+  0%,
+  100% {
+    transform: scale(0.92);
+    opacity: 0.22;
+  }
+
+  50% {
+    transform: scale(1.03);
+    opacity: 0.5;
+  }
+}
+
+@keyframes systemScanVertical {
+  0%,
+  14% {
+    transform: scaleY(0.16);
+    opacity: 0.28;
+  }
+
+  48%,
+  72% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scaleY(0.22);
+    opacity: 0.34;
+  }
+}
+
+@media (max-width: 720px) {
+  .systemTrack {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem 0.95rem;
+  }
+
+  .systemTrack::before {
+    left: 2.95rem;
+    right: auto;
+    top: 1.15rem;
+    bottom: 1.15rem;
+    width: 1px;
+    height: auto;
+    background: linear-gradient(
+      180deg,
+      rgba(127, 211, 255, 0.12),
+      rgba(127, 211, 255, 0.3),
+      rgba(248, 210, 122, 0.28),
+      rgba(248, 210, 122, 0.12)
+    );
+  }
+
+  .systemTrack::after {
+    left: calc(2.95rem - 1px);
+    right: auto;
+    top: 1.15rem;
+    bottom: 1.15rem;
+    width: 3px;
+    height: auto;
+    transform-origin: center top;
+    animation-name: systemScanVertical;
+  }
+
+  .systemStep {
+    grid-template-columns: auto 1fr;
+    justify-items: start;
+    align-items: center;
+    gap: 0.95rem;
+  }
+
+  .systemNode {
+    width: 3.6rem;
+    height: 3.6rem;
+  }
+
+  .systemStepLabel {
+    text-align: left;
+  }
+
+  .systemParagraph {
+    padding: 0.88rem 0.95rem;
+    font-size: 0.96rem;
+    min-height: 5.5rem;
+  }
+}

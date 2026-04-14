@@ -1,5 +1,5 @@
 import type { OrbitStoryAct } from './orbitData';
-import styles from './Decisions.module.css';
+import styles from '../../styles/Decisions/StoryActs.module.css';
 
 type StoryActsProps = {
   storyActs?: OrbitStoryAct[];

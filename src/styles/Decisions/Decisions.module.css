@@ -1,0 +1,370 @@
+.root {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+}
+
+.modalOpen {
+  pointer-events: auto;
+}
+
+.header {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 0.75rem;
+  width: min(720px, 92vw);
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.title {
+  font-size: clamp(2.4rem, 5.2vw, 3.8rem);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--title-gold);
+  -webkit-text-fill-color: var(--title-gold);
+  text-shadow:
+    0 0 24px rgba(210, 232, 255, 0.18),
+    0 0 12px rgba(248, 210, 122, 0.9),
+    0 0 35px rgba(248, 210, 122, 0.5);
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  display: grid;
+  gap: 0.02rem;
+  font-family: 'Seagram TFB', serif;
+  font-size: clamp(1.9rem, 3.3vw, 2.45rem);
+  letter-spacing: 0;
+  line-height: 1.02;
+  text-transform: none;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  font-weight: 700;
+  text-shadow:
+    0 0 18px rgba(255, 255, 255, 0.4),
+    0 0 30px rgba(127, 211, 255, 0.16);
+}
+
+.subtitle span {
+  display: block;
+}
+
+.orbitStage {
+  pointer-events: none;
+  position: absolute;
+  left: 50%;
+  top: 38%;
+  height: 0;
+  width: 0;
+}
+
+.purchaseWrap {
+  pointer-events: auto;
+  position: absolute;
+  left: 50%;
+  top: calc(38% + 30rem);
+  transform: translateX(-50%);
+}
+
+.mobileLayout {
+  display: none;
+}
+
+.mobileHeader,
+.mobileSubtitle,
+.mobilePurchaseWrap,
+.mobileSecureNote,
+.mobileOrbitStage,
+.mobileDivider {
+  display: none;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  text-align: center;
+  border-radius: 999px;
+  border: 1px solid rgba(127, 211, 255, 0.5);
+  background: rgba(6, 8, 24, 0.6);
+  padding: 1rem 2rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: none;
+  color: #7fd3ff;
+  transition: all 0.3s ease;
+}
+
+.ctaLink:hover {
+  border-color: #74f4ff;
+  background: rgba(127, 211, 255, 0.12);
+}
+
+.purchaseLink {
+  min-width: 400px;
+  min-height: 4.8rem;
+  border-color: rgba(116, 244, 255, 0.9);
+  background: linear-gradient(135deg, rgba(116, 244, 255, 0.25), rgba(177, 140, 255, 0.22));
+  box-shadow:
+    0 0 18px rgba(116, 244, 255, 0.35),
+    0 0 40px rgba(177, 140, 255, 0.2);
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+  padding: 1.45rem 3.8rem;
+}
+
+.purchaseLink:hover {
+  border-color: #ffffff;
+  background: linear-gradient(135deg, rgba(116, 244, 255, 0.35), rgba(177, 140, 255, 0.3));
+  box-shadow:
+    0 0 28px rgba(116, 244, 255, 0.55),
+    0 0 60px rgba(177, 140, 255, 0.35);
+}
+
+@media (max-width: 900px) {
+  .title {
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    letter-spacing: 0;
+  }
+
+  .subtitle {
+    font-size: clamp(1.2rem, 4.6vw, 2rem);
+    letter-spacing: 0.12em;
+  }
+
+  .orbitStage {
+    top: 42%;
+  }
+
+  .purchaseWrap {
+    top: calc(42% + 22rem);
+  }
+
+  .ctaLink {
+    min-width: 280px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .root {
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .header,
+  .orbitStage,
+  .purchaseWrap {
+    display: none;
+  }
+
+  .mobileLayout {
+    pointer-events: auto;
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    display: block;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .mobileHeader {
+    position: absolute;
+    left: 50%;
+    top: 2vh;
+    transform: translateX(-50%);
+    z-index: 7;
+    display: grid;
+    justify-items: center;
+    gap: 0.24rem;
+    text-align: center;
+    width: min(96vw, 28rem);
+  }
+
+  .mobileTitle {
+    font-size: clamp(2.35rem, 9.6vw, 3.4rem);
+    line-height: 0.94;
+    white-space: nowrap;
+  }
+
+  .mobileSubtitle {
+    display: grid;
+    gap: 0.08rem;
+    font-family: 'Seagram TFB', serif;
+    font-size: clamp(1.25rem, 4.9vw, 1.65rem);
+    line-height: 1.06;
+    color: #ffffff;
+    -webkit-text-fill-color: #ffffff;
+    font-weight: 700;
+    text-shadow:
+      0 0 16px rgba(255, 255, 255, 0.28),
+      0 0 24px rgba(127, 211, 255, 0.12);
+  }
+
+  .mobileSubtitle span {
+    display: block;
+  }
+
+  .mobileDivider {
+    position: absolute;
+    left: 50%;
+    top: 17vh;
+    transform: translateX(-50%);
+    z-index: 7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    margin-top: 0.15rem;
+  }
+
+  .mobileDividerLine {
+    width: clamp(3.6rem, 18vw, 5.6rem);
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(248, 210, 122, 0.9),
+      transparent
+    );
+    box-shadow: 0 0 10px rgba(248, 210, 122, 0.25);
+  }
+
+  .mobileDividerMark {
+    font-size: 1.2rem;
+    line-height: 1;
+    color: var(--title-gold);
+    text-shadow:
+      0 0 12px rgba(248, 210, 122, 0.55),
+      0 0 20px rgba(248, 210, 122, 0.24);
+  }
+
+  .mobileOrbitStage {
+    pointer-events: none;
+    position: absolute;
+    left: 50%;
+    top: 52vh;
+    z-index: 6;
+    display: block;
+    width: 0;
+    height: 0;
+  }
+
+  .mobileOrbitLabel {
+    max-width: 9rem;
+    font-size: clamp(1rem, 4.2vw, 1.35rem);
+    line-height: 1.02;
+    letter-spacing: 0;
+    text-shadow:
+      0 0 10px rgba(255, 255, 255, 0.24),
+      0 0 18px rgba(255, 255, 255, 0.08);
+  }
+
+  .mobilePurchaseWrap {
+    position: absolute;
+    left: 50%;
+    bottom: 8vh;
+    transform: translateX(-50%);
+    z-index: 7;
+    display: flex;
+    justify-content: center;
+    width: 84vw;
+  }
+
+  .mobilePurchaseLink {
+    width: 100%;
+    min-width: 0;
+    min-height: clamp(4rem, 8vh, 4.7rem);
+    padding: 1rem 1.2rem;
+    font-size: clamp(1.6rem, 6vw, 2.15rem);
+    letter-spacing: 0.02em;
+    gap: 0.7rem;
+    background: linear-gradient(135deg, rgba(116, 244, 255, 0.18), rgba(177, 140, 255, 0.16));
+    box-shadow:
+      0 0 24px rgba(116, 244, 255, 0.24),
+      0 0 54px rgba(177, 140, 255, 0.12);
+  }
+
+  .mobilePurchaseStar {
+    font-size: 0.95em;
+    color: #d7f2ff;
+    text-shadow:
+      0 0 14px rgba(127, 211, 255, 0.6),
+      0 0 24px rgba(177, 140, 255, 0.22);
+  }
+
+  .mobileSecureNote {
+    position: absolute;
+    left: 50%;
+    bottom: 2.8vh;
+    transform: translateX(-50%);
+    z-index: 7;
+    display: block;
+    margin: 0;
+    text-align: center;
+    font-size: clamp(0.98rem, 3.8vw, 1.2rem);
+    line-height: 1.2;
+    color: rgba(255, 242, 210, 0.88);
+    font-weight: 600;
+  }
+
+  .mobileSecureNote::before {
+    content: '⌂';
+    margin-right: 0.45rem;
+    font-size: 0.92em;
+    color: rgba(255, 242, 210, 0.76);
+  }
+
+}
+
+@media (max-width: 420px) {
+  .mobileLayout {
+    padding: 0;
+  }
+
+  .mobileTitle {
+    font-size: clamp(1.92rem, 8.6vw, 2.28rem);
+  }
+
+  .mobileSubtitle {
+    font-size: 1.18rem;
+  }
+
+  .mobileOrbitStage {
+    top: 49.5%;
+  }
+
+  .mobilePurchaseLink {
+    min-height: 3.75rem;
+    font-size: 1.42rem;
+    padding: 0.9rem 1rem;
+  }
+
+  .mobileSecureNote {
+    font-size: 0.94rem;
+  }
+
+  .mobileOrbitLabel {
+    max-width: 7.4rem;
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 640px) and (max-height: 780px) {
+  .mobileOrbitStage {
+    top: 48.5%;
+  }
+
+  .mobilePurchaseLink {
+    min-height: 3.5rem;
+    padding: 0.78rem 1rem;
+    font-size: 1.26rem;
+  }
+
+  .mobileSecureNote {
+    font-size: 0.84rem;
+  }
+}

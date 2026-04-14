@@ -5,7 +5,8 @@ import ExperienceFlow from './ExperienceFlow';
 import StoryActs from './StoryActs';
 import WorldConstellation from './WorldConstellation';
 import type { OrbitEntry } from './orbitData';
-import styles from './Decisions.module.css';
+import layoutStyles from '../../styles/Decisions/Decisions.module.css';
+import styles from '../../styles/Decisions/OrbitModal.module.css';
 
 const orbitTagIcons = ['✦', '☽', '⟡', '☼'];
 
@@ -107,7 +108,7 @@ export default function OrbitModal({ activeOrbit, onClose }: OrbitModalProps) {
             <div className={styles.modalActionWrap}>
               <Link
                 to="/lunaris"
-                className={`${styles.ctaLink} ${styles.modalActionLink} font-display`}
+                className={`${layoutStyles.ctaLink} ${styles.modalActionLink} font-display`}
                 onClick={onClose}
               >
                 {activeOrbit.ctaLabel}

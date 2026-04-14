@@ -3,6 +3,7 @@ import { Environment, OrbitControls, Sparkles, Stars } from '@react-three/drei';
 import { Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { OrbitControls as OrbitControlsImpl } from 'three-stdlib';
 import * as THREE from 'three';
+import type { MobileLayoutConfig } from '../config/mobileLayout';
 import Book from './Book';
 
 function CameraRig({
@@ -33,15 +34,28 @@ function CameraRig({
   return null;
 }
 
-export default function Stage() {
+type StageProps = {
+  mobileLayout: MobileLayoutConfig;
+};
+
+export default function Stage({ mobileLayout }: StageProps) {
   const controlsRef = useRef<OrbitControlsImpl | null>(null);
   const [isMobile, setIsMobile] = useState(false);
-  const bookPosition: [number, number, number] = isMobile ? [0, 0.35, 0] : [0, 0.8, 0];
-  const cameraPosition: [number, number, number] = isMobile ? [0, 1.4, 7.4] : [0, 1.9, 6.5];
-  const cameraTarget: [number, number, number] = isMobile ? [0, 0.65, 0] : [0, 1, 0];
-  const cameraFov = isMobile ? 50 : 45;
+  const pedestalPosition: [number, number, number] = isMobile
+    ? [0, mobileLayout.stage.pedestalY, 0]
+    : [0, 0.45, 0];
+  const bookPosition: [number, number, number] = isMobile
+    ? [0, mobileLayout.stage.bookY, 0]
+    : [0, 0.8, 0];
+  const cameraPosition: [number, number, number] = isMobile
+    ? [0, mobileLayout.stage.cameraY, mobileLayout.stage.cameraZ]
+    : [0, 1.9, 6.5];
+  const cameraTarget: [number, number, number] = isMobile
+    ? [0, mobileLayout.stage.targetY, 0]
+    : [0, 1, 0];
+  const cameraFov = isMobile ? mobileLayout.stage.fov : 45;
   const baseScale = 0.7;
-  const responsiveScale = isMobile ? baseScale * 0.72 : baseScale;
+  const responsiveScale = isMobile ? baseScale * mobileLayout.stage.scale : baseScale;
 
   useEffect(() => {
     const onResize = () => {
@@ -70,65 +84,67 @@ export default function Stage() {
       <Sparkles count={220} scale={[18, 10, 18]} size={4} speed={0.6} color="#9ae6ff" />
       <Sparkles count={140} scale={[10, 6, 10]} size={6} speed={0.4} color="#b18cff" />
 
-      <group position={[0, 0.45, 0]} scale={0.5}>
-        <mesh receiveShadow>
-          <cylinderGeometry args={[1.6, 1.85, 0.4, 64]} />
-          <meshStandardMaterial
-            color="#14132e"
-            metalness={0.5}
-            roughness={0.45}
-            emissive="#2a2a55"
-            emissiveIntensity={0.25}
-          />
-        </mesh>
+      {!isMobile || mobileLayout.stage.pedestalVisibleMobile ? (
+        <group position={pedestalPosition} scale={0.5}>
+          <mesh receiveShadow>
+            <cylinderGeometry args={[1.6, 1.85, 0.4, 64]} />
+            <meshStandardMaterial
+              color="#14132e"
+              metalness={0.5}
+              roughness={0.45}
+              emissive="#2a2a55"
+              emissiveIntensity={0.25}
+            />
+          </mesh>
 
-        <mesh position={[0, 0.24, 0]} receiveShadow>
-          <cylinderGeometry args={[1.35, 1.4, 0.12, 64]} />
-          <meshStandardMaterial
-            color="#1b1a3b"
-            metalness={0.7}
-            roughness={0.3}
-            emissive="#3a2d78"
-            emissiveIntensity={0.4}
-          />
-        </mesh>
+          <mesh position={[0, 0.24, 0]} receiveShadow>
+            <cylinderGeometry args={[1.35, 1.4, 0.12, 64]} />
+            <meshStandardMaterial
+              color="#1b1a3b"
+              metalness={0.7}
+              roughness={0.3}
+              emissive="#3a2d78"
+              emissiveIntensity={0.4}
+            />
+          </mesh>
 
-        <mesh position={[0, 0.32, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-          <circleGeometry args={[1.05, 64]} />
-          <meshBasicMaterial
-            color="#7fd3ff"
-            transparent
-            opacity={0.18}
-            blending={THREE.AdditiveBlending}
-            side={THREE.DoubleSide}
-          />
-        </mesh>
+          <mesh position={[0, 0.32, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+            <circleGeometry args={[1.05, 64]} />
+            <meshBasicMaterial
+              color="#7fd3ff"
+              transparent
+              opacity={0.18}
+              blending={THREE.AdditiveBlending}
+              side={THREE.DoubleSide}
+            />
+          </mesh>
 
-        <mesh position={[0, 0.34, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-          <circleGeometry args={[0.75, 64]} />
-          <meshBasicMaterial
-            color="#b18cff"
-            transparent
-            opacity={0.22}
-            blending={THREE.AdditiveBlending}
-            side={THREE.DoubleSide}
-          />
-        </mesh>
+          <mesh position={[0, 0.34, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+            <circleGeometry args={[0.75, 64]} />
+            <meshBasicMaterial
+              color="#b18cff"
+              transparent
+              opacity={0.22}
+              blending={THREE.AdditiveBlending}
+              side={THREE.DoubleSide}
+            />
+          </mesh>
 
-        <mesh position={[0, 0.28, 0]} rotation={[-Math.PI / 2, 0, 0]}>
-          <ringGeometry args={[0.9, 1.05, 128]} />
-          <meshStandardMaterial
-            color="#2c2b55"
-            emissive="#6ef3ff"
-            emissiveIntensity={0.6}
-            metalness={0.2}
-            roughness={0.3}
-            transparent
-            opacity={0.75}
-            side={THREE.DoubleSide}
-          />
-        </mesh>
-      </group>
+          <mesh position={[0, 0.28, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+            <ringGeometry args={[0.9, 1.05, 128]} />
+            <meshStandardMaterial
+              color="#2c2b55"
+              emissive="#6ef3ff"
+              emissiveIntensity={0.6}
+              metalness={0.2}
+              roughness={0.3}
+              transparent
+              opacity={0.75}
+              side={THREE.DoubleSide}
+            />
+          </mesh>
+        </group>
+      ) : null}
 
       <ambientLight intensity={0.35} color="#a8c6ff" />
       <directionalLight position={[4.5, 6, 3]} intensity={1.25} color="#b6ccff" />

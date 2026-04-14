@@ -1,0 +1,82 @@
+.orbitLabelLowered {
+  margin-top: 0.35rem;
+}
+
+.storyActOrigin {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(177, 140, 255, 0.2), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    rgba(9, 12, 31, 0.76);
+}
+
+.storyActSky {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(127, 211, 255, 0.18), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    rgba(9, 12, 31, 0.76);
+}
+
+.storyActFall {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(204, 117, 102, 0.2), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    rgba(9, 12, 31, 0.76);
+}
+
+.detailCardBook {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(156, 211, 255, 0.2), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    rgba(9, 12, 31, 0.76);
+}
+
+.detailCardCards {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(127, 211, 255, 0.18), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    rgba(9, 12, 31, 0.76);
+}
+
+.detailCardMaps {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(148, 215, 167, 0.16), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    rgba(9, 12, 31, 0.76);
+}
+
+.detailCardDomains {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(177, 140, 255, 0.18), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
+    rgba(9, 12, 31, 0.76);
+}
+
+.worldNodeActs {
+  --world-accent: rgba(248, 210, 122, 0.34);
+  --world-accent-glow: rgba(248, 210, 122, 0.2);
+}
+
+.worldNodeSymbols {
+  --world-accent: rgba(127, 211, 255, 0.34);
+  --world-accent-glow: rgba(127, 211, 255, 0.2);
+}
+
+.worldNodeDomains {
+  --world-accent: rgba(177, 140, 255, 0.34);
+  --world-accent-glow: rgba(177, 140, 255, 0.2);
+}
+
+.worldNodeRuins {
+  --world-accent: rgba(204, 117, 102, 0.34);
+  --world-accent-glow: rgba(204, 117, 102, 0.2);
+}
+
+.worldNodeSky {
+  --world-accent: rgba(155, 221, 255, 0.34);
+  --world-accent-glow: rgba(155, 221, 255, 0.2);
+}
+
+.worldNodeFire {
+  --world-accent: rgba(255, 150, 106, 0.34);
+  --world-accent-glow: rgba(255, 150, 106, 0.2);
+}
