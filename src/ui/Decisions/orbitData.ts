@@ -71,7 +71,7 @@ export const orbitEntries: OrbitEntry[] = [
     id: 'actos',
     title: 'La historia',
     eyebrow: 'LA FUNCIÓN',
-    imageSrc: '/images/obra teatral.png',
+    imageSrc: '/images/obra-teatral.webp',
     transform:
       'translate(-50%, -50%) translate(clamp(-400px, -32vw, -300px), clamp(-300px, -22vw, -210px))',
     description: 'Esta es la travesía que abre Lunnaris.',
@@ -108,7 +108,7 @@ export const orbitEntries: OrbitEntry[] = [
     id: 'dominios',
     title: 'Experiencia interactiva',
     eyebrow: 'CÓMO SE VIVE',
-    imageSrc: '/images/dominios.png',
+    imageSrc: '/images/dominios.webp',
     transform:
       'translate(-50%, -50%) translate(clamp(300px, 32vw, 400px), clamp(210px, 20vw, 300px))',
     description: 'La obra no termina en el libro.',
@@ -132,7 +132,7 @@ export const orbitEntries: OrbitEntry[] = [
     id: 'cosmovision',
     title: '¿Qué incluye?',
     eyebrow: 'LO QUE RECIBES',
-    imageSrc: '/images/cartas.png',
+    imageSrc: '/images/cartas.webp',
     transform:
       'translate(-50%, -50%) translate(clamp(300px, 32vw, 400px), clamp(-300px, -22vw, -210px))',
     description: 'Todo esto forma parte de la función.',
@@ -173,7 +173,7 @@ export const orbitEntries: OrbitEntry[] = [
     id: 'lectura',
     title: 'El mundo',
     eyebrow: 'EL UNIVERSO',
-    imageSrc: '/images/fuego.png',
+    imageSrc: '/images/fuego.webp',
     transform:
       'translate(-50%, -50%) translate(clamp(-400px, -32vw, -300px), clamp(210px, 20vw, 300px))',
     description: 'Este es el mapa de Lunnaris.',

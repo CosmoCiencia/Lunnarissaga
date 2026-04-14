@@ -19,9 +19,12 @@ export default function Welcome({ onStart }: WelcomeProps) {
           <h2 className={styles.titleSub}>inaugura su primera función</h2>
 
           <img
-            src="/images/escudo%20reina.png"
+            src="/images/escudo-reina.webp"
             alt="Escudo de la reina"
             className={styles.crest}
+            loading="eager"
+            decoding="async"
+            fetchPriority="high"
           />
         </div>
 

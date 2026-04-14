@@ -13,7 +13,7 @@
 .background {
   position: absolute;
   inset: 0;
-  background-image: url("/images/welcomepage%20teatro.webp");
+  background-image: url("/images/welcome-hero.webp");
   background-size: cover;
   background-position: center;
 }

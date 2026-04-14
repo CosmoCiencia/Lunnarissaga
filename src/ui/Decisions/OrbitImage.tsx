@@ -24,7 +24,13 @@ export default function OrbitImage({
       onClick={onClick}
     >
       <div className={styles.orbitImageFrame}>
-        <img src={imageSrc} alt={title} className={styles.orbitImage} />
+        <img
+          src={imageSrc}
+          alt={title}
+          className={styles.orbitImage}
+          loading="lazy"
+          decoding="async"
+        />
       </div>
       <div className={`${styles.orbitLabel} ${labelClassName ?? ''} font-display`}>{title}</div>
     </button>
