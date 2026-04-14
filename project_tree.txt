@@ -1,5 +1,4 @@
 .
-├── generate_book_glb.js
 ├── index.html
 ├── package.json
 ├── package-lock.json
@@ -9,13 +8,6 @@
 │   ├── images
 │   │   ├── cartas.png
 │   │   ├── dominios.png
-<<<<<<< HEAD
-│   │   ├── fuego.png
-│   │   └── obra teatral.png
-│   └── models
-│       ├── capsula.glb
-│       └── winrar.glb
-=======
 │   │   ├── escudo reina.png
 │   │   ├── fuego.png
 │   │   ├── obra teatral.png
@@ -23,28 +15,20 @@
 │   └── models
 │       └── Lunnaris3D.glb
 ├── README.md
->>>>>>> 66e15b7 (update teatro celeste)
 ├── src
 │   ├── App.tsx
-│   ├── assets
-│   │   └── models
-│   │       └── mascara.glb
 │   ├── canvas
-│   │   ├── Capsule.tsx
-│   │   ├── Lights.tsx
-│   │   ├── Mask.tsx
+│   │   ├── Book.tsx
 │   │   └── Stage.tsx
 │   ├── main.tsx
 │   ├── pages
-│   │   ├── Act0.tsx
 │   │   ├── Cosmovision.module.css
 │   │   ├── Cosmovision.tsx
 │   │   ├── Festival.module.css
 │   │   ├── Festival.tsx
+│   │   ├── LunarisCheckout.tsx
 │   │   ├── Lunaris.module.css
 │   │   └── Lunaris.tsx
-│   ├── stage
-│   │   └── Stage2D.tsx
 │   ├── styles
 │   │   └── index.css
 │   ├── ui
@@ -63,8 +47,4 @@
 ├── vite.config.js
 └── vite.config.ts
 
-<<<<<<< HEAD
-12 directories, 42 files
-=======
-12 directories, 44 files
->>>>>>> 66e15b7 (update teatro celeste)
+9 directories, 39 files

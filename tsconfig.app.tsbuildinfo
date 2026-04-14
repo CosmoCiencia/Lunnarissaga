@@ -1,1 +1,0 @@
-{"root":["./src/App.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/canvas/Capsule.tsx","./src/canvas/Lights.tsx","./src/canvas/Mask.tsx","./src/canvas/Stage.tsx","./src/pages/Act0.tsx","./src/pages/Cosmovision.tsx","./src/pages/Festival.tsx","./src/pages/Lunaris.tsx","./src/stage/Stage2D.tsx","./src/ui/Decisions.tsx","./src/ui/Welcome.tsx"],"errors":true,"version":"5.9.3"}

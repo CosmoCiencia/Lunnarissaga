@@ -1,5 +1,5 @@
 {
-  "name": "mercado-magico",
+  "name": "teatro-celeste",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,7 +11,6 @@
   "dependencies": {
     "@react-three/drei": "^9.100.7",
     "@react-three/fiber": "^8.15.19",
-    "leva": "^0.10.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^7.13.0",

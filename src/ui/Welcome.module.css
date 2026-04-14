@@ -1,0 +1,267 @@
+.root {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #04030a;
+  color: #f6e7bf;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  background-image: url("/images/welcomepage%20teatro.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.panel {
+  position: relative;
+  width: min(1100px, 92vw);
+  margin: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 1;
+}
+
+.titleWrapper {
+  position: relative;
+  width: min(92vw, 1100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.titleWrapper::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 52%;
+  width: min(860px, 96vw);
+  height: clamp(180px, 30vw, 300px);
+  transform: translate(-50%, -50%);
+  background:
+    radial-gradient(ellipse at center, rgba(8, 10, 20, 0.72) 0%, rgba(8, 10, 20, 0.44) 48%, rgba(8, 10, 20, 0) 78%),
+    radial-gradient(ellipse at center, rgba(214, 234, 255, 0.14) 0%, rgba(214, 234, 255, 0) 62%);
+  filter: blur(26px);
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.titleMain {
+  margin: 0;
+  font-size: clamp(3.8rem, 9vw, 8rem);
+  line-height: 1;
+  letter-spacing: 0;
+  color: var(--title-gold);
+  -webkit-text-fill-color: var(--title-gold);
+  text-shadow:
+    0 0 24px rgba(210, 232, 255, 0.18),
+    0 0 12px rgba(248, 210, 122, 0.9),
+    0 0 35px rgba(248, 210, 122, 0.5);
+}
+
+.tightT {
+  display: inline-block;
+  margin-right: -0.13em;
+}
+
+.titleSub {
+  margin-top: 0.35rem;
+  margin-bottom: 0;
+  font-family: 'Seagram TFB', serif;
+  font-size: clamp(1.55rem, 3.5vw, 3rem);
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  letter-spacing: 0;
+  text-transform: none;
+  text-shadow:
+    0 0 16px rgba(255, 255, 255, 0.3),
+    0 0 28px rgba(127, 211, 255, 0.12);
+}
+
+.crest {
+  display: block;
+  width: clamp(128px, 15vw, 210px);
+  height: auto;
+  margin: 1.1rem auto 0;
+  animation: crestFloat 4s ease-in-out infinite;
+  filter:
+    drop-shadow(0 0 10px rgba(106, 178, 255, 0.18))
+    drop-shadow(0 0 16px rgba(248, 210, 122, 0.22))
+    drop-shadow(0 10px 22px rgba(5, 4, 12, 0.32));
+}
+
+.menu {
+  margin-top: 2.4rem;
+  display: grid;
+  gap: 0.75rem;
+  text-align: center;
+  justify-items: center;
+}
+
+.menuLead {
+  margin: 0 0 0.1rem;
+  font-family: 'Seagram TFB', serif;
+  color: rgba(248, 210, 122, 0.92);
+  font-size: clamp(1.55rem, 3.5vw, 3rem);
+  letter-spacing: 0;
+  text-shadow:
+    0 0 20px rgba(248, 210, 122, 0.26),
+    0 0 34px rgba(127, 211, 255, 0.12);
+}
+
+.menuCaption {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0.25rem 0 0;
+  text-align: center;
+}
+
+.menuCaption span {
+  display: block;
+}
+
+.menuCaption span:last-child {
+  font-family: 'Seagram TFB', serif;
+  color: rgba(244, 247, 255, 0.72);
+  font-size: clamp(0.82rem, 1.2vw, 0.95rem);
+  letter-spacing: 0.16em;
+  text-shadow:
+    0 0 12px rgba(255, 255, 255, 0.14),
+    0 0 18px rgba(127, 211, 255, 0.06);
+}
+
+.primaryButton,
+.ghostButton {
+  display: inline-flex;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 1rem 2.3rem;
+  font-size: clamp(1.08rem, 1.85vw, 1.2rem);
+  letter-spacing: 0.06em;
+  text-transform: none;
+  transition: all 0.25s ease;
+}
+
+button.primaryButton {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border: 2px solid #e6c068;
+  background: linear-gradient(145deg, rgba(242, 195, 90, 0.96), rgba(201, 152, 47, 0.96));
+  color: #201304;
+  box-shadow:
+    0 0 22px rgba(248, 210, 122, 0.32),
+    0 0 44px rgba(248, 210, 122, 0.18),
+    inset 0 1px 0 rgba(255, 244, 208, 0.45);
+}
+
+button.primaryButton::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(248, 210, 122, 0.35), transparent 70%);
+  opacity: 0.6;
+  filter: blur(12px);
+  pointer-events: none;
+  z-index: 0;
+  animation: pulseGlow 2.8s ease-in-out infinite;
+}
+
+button.primaryButton > span {
+  position: relative;
+  z-index: 1;
+}
+
+button.primaryButton:hover {
+  border-color: #f2d58e;
+  background: linear-gradient(145deg, #f5cc6c, #d3a23b);
+  box-shadow:
+    0 0 28px rgba(248, 210, 122, 0.48),
+    0 0 56px rgba(248, 210, 122, 0.26),
+    inset 0 1px 0 rgba(255, 247, 222, 0.55);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.primaryHint {
+  color: rgba(243, 210, 122, 0.68);
+  transition: color 0.25s ease;
+}
+
+.primaryButton:hover .primaryHint {
+  color: #ffe1a0;
+}
+
+.ghostButton {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(5, 6, 20, 0.35);
+  color: rgba(217, 199, 255, 0.6);
+  justify-content: flex-start;
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.98);
+  }
+
+  50% {
+    opacity: 0.85;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes crestFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 640px) {
+  .panel {
+    transform: scale(1.15) translateY(6vh);
+  }
+
+  .titleMain {
+    font-size: clamp(2.8rem, 11vw, 4.2rem);
+    line-height: 1.05;
+  }
+
+  .titleSub {
+    font-size: clamp(1rem, 4.5vw, 1.4rem);
+    margin-top: 0.4rem;
+  }
+
+  .primaryButton {
+    font-size: 1.2rem;
+    padding: 1.2rem 2.6rem;
+  }
+
+  .crest {
+    width: clamp(150px, 28vw, 200px);
+  }
+}

@@ -14,6 +14,7 @@
   --neon-cyan: #74f4ff;
   --neon-violet: #b18cff;
   --neon-lilac: #d9c7ff;
+  --title-gold: #f8d27a;
 }
 
 html,
@@ -48,9 +49,14 @@ h3,
 h4 {
   font-family: 'Seagram TFB', serif;
   letter-spacing: 0.08em; /* más elegante en minúscula */
-  color: var(--neon-blue);
+  color: var(--title-gold);
+  -webkit-text-fill-color: currentColor;
   line-height: 1.2;
   text-transform: none; /* 👈 CLAVE */
+  text-shadow:
+    0 0 24px rgba(210, 232, 255, 0.18),
+    0 0 12px rgba(248, 210, 122, 0.9),
+    0 0 35px rgba(248, 210, 122, 0.5);
 }
 
 /* subtítulos / frases rituales */
@@ -100,4 +106,72 @@ button:hover {
     rgba(127, 211, 255, 0.12) 0%,
     rgba(6, 8, 24, 0.9) 65%
   );
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 9999;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem 1.1rem 0.8rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(122, 255, 184, 0.55);
+  background:
+    linear-gradient(135deg, rgba(8, 38, 24, 0.96), rgba(17, 92, 53, 0.92)),
+    rgba(5, 14, 9, 0.92);
+  color: #effff5;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.88rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.42),
+    0 0 28px rgba(37, 211, 102, 0.22);
+  backdrop-filter: blur(14px);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-3px) scale(1.01);
+  border-color: rgba(122, 255, 184, 0.85);
+  box-shadow:
+    0 22px 48px rgba(0, 0, 0, 0.5),
+    0 0 34px rgba(37, 211, 102, 0.34);
+}
+
+.whatsapp-float__badge {
+  width: 2.35rem;
+  height: 2.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #25d366, #8cffb5);
+  color: #04240f;
+  font-family: 'Seagram TFB', serif;
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  box-shadow: 0 0 22px rgba(37, 211, 102, 0.42);
+}
+
+@media (max-width: 640px) {
+  .whatsapp-float {
+    right: 0.9rem;
+    bottom: 0.9rem;
+    gap: 0.65rem;
+    padding: 0.72rem 0.95rem 0.72rem 0.72rem;
+    font-size: 0.76rem;
+  }
+
+  .whatsapp-float__badge {
+    width: 2.1rem;
+    height: 2.1rem;
+  }
 }

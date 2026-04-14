@@ -1,0 +1,76 @@
+.root {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #04030a;
+  color: #d9c7ff;
+  overflow: hidden;
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at top,
+    rgba(127, 211, 255, 0.22) 0%,
+    rgba(6, 8, 24, 0.95) 55%,
+    rgba(4, 3, 10, 1) 100%
+  );
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  width: min(720px, 92vw);
+  margin: 0 1.5rem;
+  text-align: center;
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: rgba(127, 211, 255, 0.85);
+}
+
+.title {
+  margin-top: 1.25rem;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  color: var(--title-gold);
+  -webkit-text-fill-color: var(--title-gold);
+  text-shadow:
+    0 0 24px rgba(210, 232, 255, 0.18),
+    0 0 12px rgba(248, 210, 122, 0.9),
+    0 0 35px rgba(248, 210, 122, 0.5);
+}
+
+.body {
+  margin-top: 1.5rem;
+  font-size: 1.05rem;
+  color: rgba(217, 199, 255, 0.9);
+}
+
+.actions {
+  margin-top: 2.5rem;
+}
+
+.backLink {
+  display: inline-block;
+  border-radius: 999px;
+  border: 1px solid rgba(127, 211, 255, 0.5);
+  background: rgba(6, 8, 24, 0.6);
+  padding: 1rem 2rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: #7fd3ff;
+  transition: all 0.3s ease;
+}
+
+.backLink:hover {
+  border-color: #74f4ff;
+  background: rgba(127, 211, 255, 0.12);
+}

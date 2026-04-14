@@ -1,76 +1,56 @@
-import { useState } from 'react';
+import { Suspense, lazy, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Welcome from './ui/Welcome';
 
-import MarketStage3D from './canvas/MarketStage3D';
-import MarketDecisions from './ui/MarketDecisions';
-import MarketWelcome from './ui/MarketWelcome';
+const Stage = lazy(() => import('./canvas/Stage'));
+const Decisions = lazy(() => import('./ui/Decisions/Decisions'));
+const Festival = lazy(() => import('./pages/Festival'));
+const Cosmovision = lazy(() => import('./pages/Cosmovision'));
+const Lunaris = lazy(() => import('./pages/Lunaris'));
+const LunarisCheckout = lazy(() => import('./pages/LunarisCheckout'));
 
-import MarketFestival from './pages/MarketFestival';
-import MarketCosmovision from './pages/MarketCosmovision';
-import MarketLunaris from './pages/MarketLunaris';
+const WHATSAPP_NUMBER = '573001234567';
+const WHATSAPP_MESSAGE = encodeURIComponent(
+  'Hola, quiero información sobre Teatro Celeste.',
+);
 
 export default function App() {
   const [started, setStarted] = useState(false);
+  const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
   return (
-    <div className="w-screen h-screen relative overflow-hidden">
-      {/* ESCENA 3D SIEMPRE MONTADA */}
-      {started && (
-        <div className="absolute inset-0 z-0">
-          <MarketStage3D />
-        </div>
-      )}
-
-      {/* INTERFAZ / RUTAS */}
-      <div className="absolute inset-0 z-10 pointer-events-none">
+    <>
+      <Suspense fallback={null}>
         <Routes>
           <Route
             path="/"
             element={
-              <>
-                {!started && (
-                  <div className="pointer-events-auto">
-                    <MarketWelcome onStart={() => setStarted(true)} />
-                  </div>
-                )}
-
-                {started && (
-                  <div className="pointer-events-auto">
-                    <MarketDecisions />
-                  </div>
-                )}
-              </>
-            }
-          />
-
-          <Route
-            path="/festival"
-            element={
-              <div className="pointer-events-auto">
-                <MarketFestival />
+              <div className="w-screen h-screen relative overflow-hidden">
+                {!started && <Welcome onStart={() => setStarted(true)} />}
+                {started && <Stage />}
+                {started && <Decisions />}
               </div>
             }
           />
-
-          <Route
-            path="/cosmovision"
-            element={
-              <div className="pointer-events-auto">
-                <MarketCosmovision />
-              </div>
-            }
-          />
-
-          <Route
-            path="/lunaris"
-            element={
-              <div className="pointer-events-auto">
-                <MarketLunaris />
-              </div>
-            }
-          />
+          <Route path="/festival" element={<Festival />} />
+          <Route path="/cosmovision" element={<Cosmovision />} />
+          <Route path="/lunaris" element={<Lunaris />} />
+          <Route path="/lunaris/checkout" element={<LunarisCheckout />} />
         </Routes>
-      </div>
-    </div>
+      </Suspense>
+
+      <a
+        className="whatsapp-float"
+        href={whatsappHref}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Escribir por WhatsApp"
+      >
+        <span className="whatsapp-float__badge" aria-hidden="true">
+          WA
+        </span>
+        <span>WhatsApp</span>
+      </a>
+    </>
   );
 }

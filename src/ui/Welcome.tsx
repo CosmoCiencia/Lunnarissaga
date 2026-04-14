@@ -13,10 +13,10 @@ export default function Welcome({ onStart }: WelcomeProps) {
       <div className={styles.panel}>
         <div className={styles.titleWrapper}>
           <h1 className={`${styles.titleMain} font-display`}>
-            <span className={styles.tightT}>T</span>eatro Celeste
+            El <span className={styles.tightT}>T</span>eatro Celeste
           </h1>
 
-          <h2 className={`${styles.titleSub} font-display`}>Inaugura su primera función</h2>
+          <h2 className={styles.titleSub}>inaugura su primera función</h2>
 
           <img
             src="/images/escudo%20reina.png"
@@ -27,8 +27,14 @@ export default function Welcome({ onStart }: WelcomeProps) {
 
         <div className={styles.menu}>
           <button type="button" onClick={onStart} className={styles.primaryButton}>
-            <span>Participar</span>
+            <span>Entrar</span>
           </button>
+
+          <p className={styles.menuLead}>Una obra de teatro en forma de libro</p>
+
+          <p className={styles.menuCaption}>
+            <span>Cosmo Ciencia</span>
+          </p>
         </div>
       </div>
     </div>
